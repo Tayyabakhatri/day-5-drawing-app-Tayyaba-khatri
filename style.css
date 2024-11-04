@@ -21,9 +21,9 @@ body {
 }
 
 #tool-box {
-    border: 1px dotted  rgb(189, 96, 231);
+    border: 1px dotted rgb(189, 96, 231);
     min-width: 80%;
-    display:flex;
+    display: flex;
     /* gap: 10px; */
     justify-content: space-between;
     font-size: 2rem;
@@ -32,11 +32,24 @@ body {
     box-shadow: rgb(189, 96, 231) 0px 0px 10px 3px;
     padding: 6px 10px;
 }
-/* #tool-box >*{
-    margin: 0px 6px; 
-     border: 2px solid black; 
-} */
-#measures{
+#tool-box>*{
+    cursor: pointer;
+}
+
+#measures {
     display: flex;
     gap: 15px;
+}
+#measures >*{
+    cursor: pointer;
+}
+
+#measures>button {
+    border: none;
+    background: #ffff;
+    font-size: 2rem;
+}
+#color{
+    width: 40px;
+    height: 40px;
 }
