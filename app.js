@@ -23,10 +23,30 @@ canvas.addEventListener('mousedown', (e) => {
     x = e.offsetX;
     y = e.offsetY;
 });
+canvas.addEventListener('touchstart',()=>{
+    isPressed = true
+    x = e.offsetX;
+    y = e.offsetY;
+})
+canvas.addEventListener('touchend',()=>{
+    isPressed = false
+    x = undefined
+    y = undefined
+})
 canvas.addEventListener('mouseup', (e) => {
     isPressed = false
     x = undefined
     y = undefined
+})
+canvas.addEventListener('touchmove',()=>{
+    if (isPressed) {
+        const x2 = e.offsetX
+        const y2 = e.offsetY
+        drowCircle(x2, y2);
+        drawLine(x, y, x2, y2)
+        x = x2;
+        y = y2;
+    }
 })
 canvas.addEventListener('mousemove', (e) => {
     if (isPressed) {
