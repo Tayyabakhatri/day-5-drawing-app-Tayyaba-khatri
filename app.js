@@ -1,4 +1,6 @@
 let canvas = document.getElementById("canvas");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight
 let increase = document.getElementById("increase");
 let decrease = document.getElementById("decrease");
 let clear = document.getElementById("clear");
@@ -7,14 +9,14 @@ let color = document.getElementById("color");
 
 const ctx = canvas.getContext('2d');
 
-let sizeElement = 0
+let sizeElement = 5
 let isPressed = false;
 // color.value = "black";
 
 let x;
 let y;
 
-color.value = "#23e3eb"
+color.value = "#000"
 let colorElement = color.value;
 canvas.addEventListener('mousedown', (e) => {
     isPressed = true
@@ -36,9 +38,9 @@ canvas.addEventListener('mousemove', (e) => {
         y = y2;
     }
 })
-function drowCircle(x, y) {
+function drowCircle(x, y) {    
     ctx.beginPath();
-    ctx.arc(x, y, sizeElement, 0, Math.PI * 2)
+    ctx.arc(x, y, sizeElement, 0, Math.PI*2)
     ctx.fillStyle = colorElement;
     ctx.fill()
 }
@@ -50,17 +52,13 @@ function drawLine(x1, y1, x2, y2) {
     ctx.lineWidth = sizeElement * 2
     ctx.stroke()
 }
-
-
-
-
 //icreament and decreament in size 
 function updatesize() {
     size.innerHTML = sizeElement
 }
 //increasing
 increase.addEventListener('click', () => {
-    sizeElement += 2
+    sizeElement += 5
     if (sizeElement > 30) {
         sizeElement = 30
     }
@@ -68,13 +66,11 @@ increase.addEventListener('click', () => {
 })
 //decreasing
 decrease.addEventListener('click', () => {
-    sizeElement -= 2
-    if (sizeElement < 1) {
+    sizeElement -= 5
+    if (sizeElement < 5) {
         sizeElement = 1
     }
     updatesize()
 })
-
 color.addEventListener('change', (e) => colorElement = e.target.value);
 clear.addEventListener('click', () => ctx.clearRect(0, 0, canvas.width, canvas.height));
-// export{drawLine,drowCircle,updatesize,isPressed,x,y,increase,decrease}

@@ -11,18 +11,24 @@ body {
     flex-direction: column;
     height: 100vh;
 }
+h1{
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: auto;
+}
 
 #canvas {
-    max-width: 80%;
-    min-height: 80%;
+   max-width: 70%;
+    max-height: 70%;
     border: 2px solid rgb(124, 248, 248);
     border-radius: 30px;
     box-shadow: rgb(124, 248, 248) 0px 0px 10px 5px;
+   
 }
 
 #tool-box {
     border: 1px dotted rgb(189, 96, 231);
-    min-width: 80%;
+    min-width: 70%;
     display: flex;
     /* gap: 10px; */
     justify-content: space-between;
